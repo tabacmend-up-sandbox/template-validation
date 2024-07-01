@@ -9,6 +9,7 @@ jobs:
   call-template:
     uses: tabacmend-up-sandbox/mend-templates/.github/workflows/mend-scan-template.yaml@main
     with:
+      MEND_URL: ${{ env.MEND_URL }}
       SCA: true
       SAST: true
       CN: false
