@@ -1,18 +1,18 @@
 name: Mend
 
 on: workflow_dispatch
+
 env:
-  MEND_URL: {{ vars.MEND_URL }}
+  MEND_URL: ${{ vars.MEND_URL }}
 
 jobs:
   call-template:
     uses: tabacmend-up-sandbox/mend-templates/.github/workflows/mend-scan-template.yaml@main
     with:
-      MEND_URL: https://saas-eu.mend.io
       SCA: true
       SAST: true
       CN: false
       SCA_Reports: 'ALL'
-    secrets: 
+    secrets:
       MEND_EMAIL: ${{ secrets.MEND_EMAIL }}
-      MEND_USER_KEY: ${{ secrets.MEND_USER_KEY }} 
+      MEND_USER_KEY: ${{ secrets.MEND_USER_KEY }}
