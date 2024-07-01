@@ -3,7 +3,7 @@ name: Mend
 on: workflow_dispatch
 
 jobs:
-  call-template:
+  use-private-template:
     runs-on: ubuntu-latest
 
     steps:
@@ -12,8 +12,8 @@ jobs:
 
       - name: Authenticate to GitHub
         run: echo "${{ secrets.GH_PAT }}" | gh auth login --with-token
-      
-      - name: Mend Scan
+
+      - name: Mend
         uses: tabacmend-up-sandbox/mend-templates/.github/workflows/mend-scan-template.yaml@main
         with:
           MEND_EMAIL: ${{ secrets.MEND_EMAIL }}
