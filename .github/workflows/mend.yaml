@@ -11,6 +11,4 @@ jobs:
       SAST: true
       CN: false
       SCA_Reports: 'ALL'
-    secrets:
-      MEND_EMAIL: ${{ secrets.MEND_EMAIL }}
-      MEND_USER_KEY: ${{ secrets.MEND_USER_KEY }}
+    secrets: inherit
