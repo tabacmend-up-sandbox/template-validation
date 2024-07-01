@@ -1,6 +1,8 @@
 name: Mend
 
 on: workflow_dispatch
+env:
+  MEND_URL: {{ vars.MEND_URL }}
 
 jobs:
   call-template:
@@ -13,4 +15,4 @@ jobs:
       SCA_Reports: 'ALL'
     secrets: 
       MEND_EMAIL: ${{ secrets.MEND_EMAIL }}
-      MEND_USER_KEY: ${{ secrets.MEND_USER_KEY }}
+      MEND_USER_KEY: ${{ secrets.MEND_USER_KEY }} 
