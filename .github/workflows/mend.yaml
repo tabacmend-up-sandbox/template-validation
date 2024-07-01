@@ -3,23 +3,13 @@ name: Mend
 on: workflow_dispatch
 
 jobs:
-  use-private-template:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Authenticate to GitHub
-        run: echo "${{ secrets.GH_PAT }}" | gh auth login --with-token
-
-      - name: Mend
-        uses: tabacmend-up-sandbox/mend-templates/.github/workflows/mend-scan-template.yaml@main
-        with:
-          MEND_EMAIL: ${{ secrets.MEND_EMAIL }}
-          MEND_USER_KEY: ${{ secrets.MEND_USER_KEY}}
-          MEND_URL: "https://saas-eu.mend.io"
-          SCA: true
-          SAST: true
-          CN: false
-          SCA_Reports: 'ALL'
+  call-template:
+    uses: tabacmend-up-sandbox/mend-templates/.github/workflows/mend-scan-template.yaml@main
+    with:
+      MEND_EMAIL: ${{ secrets.MEND_EMAIL }}
+      MEND_USER_KEY: ${{ secrets.MEND_USER_KEY }}
+      MEND_URL: "https://saas-eu.mend.io"
+      SCA: true
+      SAST: true
+      CN: false
+      SCA_Reports: 'ALL'
