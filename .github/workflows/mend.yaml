@@ -4,7 +4,7 @@ on: workflow_dispatch
 
 jobs:
   call-template:
-    uses: tabacmend-sandbox-up/mend-templates/mend-scan-template.yaml@main
+    uses: tabacmend-sandbox-up/mend-templates/.github/workflows/mend-scan-template.yaml@main
     with:
       SCA: true
       SAST: true
