@@ -9,4 +9,4 @@ jobs:
       SCA: true
       SAST: true
       CN: false
-      SCA_Reports: "ALL"
+      SCA_Reports: 'ALL'
