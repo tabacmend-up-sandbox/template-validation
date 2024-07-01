@@ -6,7 +6,7 @@ jobs:
   call-template:
     uses: tabacmend-up-sandbox/mend-templates/.github/workflows/mend-scan-template.yaml@main
     with:
-      MEND_URL: "https://saas-eu.mend.io"
+      MEND_URL: https://saas-eu.mend.io
       SCA: true
       SAST: true
       CN: false
