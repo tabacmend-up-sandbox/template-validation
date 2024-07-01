@@ -6,6 +6,9 @@ jobs:
   call-template:
     uses: tabacmend-up-sandbox/mend-templates/.github/workflows/mend-scan-template.yaml@main
     with:
+      MEND_EMAIL: ${{ secrets.MEND_EMAIL }}
+      MEND_USER_KEY: ${{ secrets.MEND_USER_KEY}}
+      MEND_URL: "https://saas-eu.mend.io"
       SCA: true
       SAST: true
       CN: false
