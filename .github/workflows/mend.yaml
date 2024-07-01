@@ -2,14 +2,12 @@ name: Mend
 
 on: workflow_dispatch
 
-env:
-  MEND_URL: ${{ vars.MEND_URL }}
 
 jobs:
   call-template:
     uses: tabacmend-up-sandbox/mend-templates/.github/workflows/mend-scan-template.yaml@main
     with:
-      MEND_URL: ${{ env.MEND_URL }}
+      MEND_URL: "https://saas-eu.mend.io"
       SCA: true
       SAST: true
       CN: false
